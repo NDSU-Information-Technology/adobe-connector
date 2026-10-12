@@ -1,0 +1,78 @@
+<!--
+  ~ Copyright (c) 2026 North Dakota State University
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>edu.ndsu.eci.midpoint</groupId>
+  <artifactId>adobe-connector</artifactId>
+  <version>1.1.4-SNAPSHOT</version>
+  <parent>
+  	<groupId>com.evolveum.polygon</groupId>
+  	<artifactId>connector-parent</artifactId>
+  	<version>1.5.2.0</version>
+  </parent>
+  <properties>
+  	<connectorPackage>edu.ndsu.eci.midpoint.adobe_connector</connectorPackage>
+  	<connectorClass>AdobeConnector</connectorClass>
+  </properties>
+  <scm>
+  	<url>https://github.com/NDSU-Information-Technology/adobe-connector</url>
+  	<connection>scm:git:ssh://git@github.com/NDSU-Information-Technology/adobe-connector.git</connection>
+  	<developerConnection>scm:git:ssh://git@github.com/NDSU-Information-Technology/adobe-connector.git</developerConnection>
+  	<tag>Head</tag>
+  </scm>
+  <name>Adobe Connector</name>
+  	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+                    <source>17</source>
+                    <target>17</target>
+                </configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+			</plugin>
+			<plugin>
+                <groupId>org.apache.rat</groupId>
+                <artifactId>apache-rat-plugin</artifactId>
+                <version>0.17</version>
+            </plugin>
+		</plugins>
+	</build>
+  	<dependencies>
+  		<dependency>
+  			<groupId>com.google.code.gson</groupId>
+  			<artifactId>gson</artifactId>
+  			<version>2.14.0</version>
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.httpcomponents.client5</groupId>
+  			<artifactId>httpclient5</artifactId>
+  			<version>5.6.2</version>
+  		</dependency>
+  	</dependencies>
+</project>
